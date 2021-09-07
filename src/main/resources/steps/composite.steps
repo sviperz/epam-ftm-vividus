@@ -1,0 +1,41 @@
+Composite: When I log in with my $email and $password
+When I click on element located `By.xpath(//a[@href='/login'])`
+When I enter `<email>` in field located `By.xpath(//input[@id='user'])`
+When I click on element located `By.xpath(//input[@id='login'])`
+When I enter `<password>` in field located `By.xpath(//input[@id='password'])`
+When I click on element located `By.xpath(//button[@id='login-submit'])`
+When I wait until the page title contains the text 'Boards | Trello'
+
+
+Composite: When I perform visual check for templates
+When I wait until element located `By.xpath((//div[@class='_1lNGnwXLiliY4g'])[1])` appears
+When I change context to element located `By.xpath((//div[@class='_1lNGnwXLiliY4g'])[1])`
+When I establish baseline with `templates`
+When I refresh the page
+When I wait until element located `By.xpath((//div[@class='_1lNGnwXLiliY4g'])[1])` appears
+When I change context to element located `By.xpath((//div[@class='_1lNGnwXLiliY4g'])[1])`
+When I compare against baseline with `templates`
+
+
+Composite: When I perform visual check for notifications
+When I click on element located `By.xpath(//button[@data-test-id='header-notifications-button'])`
+When I change context to element located `By.xpath(//section[@data-test-id='header-notifications-popover'])`
+When I establish baseline with `notifications`
+When I click on element located `By.xpath(//button[@data-test-id='view-all'])`
+When I wait until element located `By.xpath(//h3[text()='No notifications'])` appears
+When I change context to element located `By.xpath(//section[@data-test-id='header-notifications-popover'])`
+When I compare against baseline with `notifications`
+
+
+Composite: When I perform visual check for pricing
+When I wait until element located `By.xpath(//section[@class='UiSection__Section-sc-1inoqcn-0 cLvfHN ui-section'])` appears
+When I change context to element located `By.xpath(//section[@class='UiSection__Section-sc-1inoqcn-0 cLvfHN ui-section'])`
+When I establish baseline with `pricing` ignoring:
+|ELEMENT|
+|By.xpath(//h1[text()='Trello your way.'])|
+When I refresh the page
+When I wait until element located `By.xpath(//section[@class='UiSection__Section-sc-1inoqcn-0 cLvfHN ui-section'])` appears
+When I change context to element located `By.xpath(//section[@class='UiSection__Section-sc-1inoqcn-0 cLvfHN ui-section'])`
+When I compare against baseline with `pricing` ignoring:
+|ELEMENT|
+|By.xpath(//h1[text()='Trello your way.'])|

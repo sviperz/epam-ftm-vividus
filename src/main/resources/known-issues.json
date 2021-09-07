@@ -1,2 +1,7 @@
 {
+    "FTM-1": {
+        "type": "Internal",
+        "assertionPattern": "Visual check passed \\[The condition is false\\]",
+        "scenarioPattern": "Visual check for the Notification area",
+    }
 }
